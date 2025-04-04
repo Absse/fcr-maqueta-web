@@ -1,0 +1,412 @@
+/* =========================================
+   RESET & CONFIGURACIÓN GLOBAL
+========================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CONTAINERS GENERALES
+========================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================
+   HEADER Y NAVEGACIÓN
+========================================= */
+header {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.nav li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav li a:hover {
+  color: #00b4d8;
+}
+
+/* =========================================
+   HERO (INTRO)
+========================================= */
+.hero {
+  position: relative;
+  background: url('../img/hero-tech.jpg') center/cover no-repeat;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to right, rgba(0, 51, 102, 0.9), rgba(0, 91, 153, 0.6));
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn-primario {
+  display: inline-block;
+  background-color: #00b4d8;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primario:hover {
+  background-color: #0096c7;
+}
+
+/* =========================================
+   SECCIÓN: NOSOTROS
+========================================= */
+.nosotros {
+  background-color: #ffffff;
+  padding: 80px 20px;
+}
+
+.container-nosotros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.texto-nosotros {
+  flex: 1 1 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  background: #fff;
+  padding: 30px;
+}
+
+.texto-nosotros h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+.texto-nosotros p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.imagen-nosotros {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.imagen-nosotros img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   SECCIÓN: SERVICIOS
+========================================= */
+.servicios {
+  background-color: #f4f4f4;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.servicios h2 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.card-servicio {
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-servicio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-servicio img {
+  width: 60px;
+  margin-bottom: 20px;
+  filter: invert(20%) sepia(100%) saturate(600%) hue-rotate(170deg);
+}
+
+.card-servicio h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.card-servicio p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* =========================================
+   SECCIÓN: CLIENTES
+========================================= */
+.clientes {
+  background-color: #f8f9fa;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.clientes h2 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
+.swiper {
+  padding: 0 20px;
+}
+
+.swiper-slide {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.swiper-slide img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+
+/* =========================================
+   SECCIÓN: TESTIMONIOS
+========================================= */
+.testimonios {
+  background-color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonios h2 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
+.testimonios blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #00b4d8;
+  padding: 30px;
+  font-style: italic;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonios blockquote p {
+  font-size: 17px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.testimonios cite {
+  font-weight: bold;
+  color: #003366;
+}
+
+/* =========================================
+   SECCIÓN: CONTACTO
+========================================= */
+.contacto {
+  background-color: #ffffff;
+  padding: 80px 20px;
+}
+
+.container-contacto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.formulario {
+  flex: 1 1 400px;
+}
+
+.formulario h2 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.formulario p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.formulario button {
+  background-color: #003366;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+  background-color: #005b99;
+}
+
+.imagen-contacto {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.imagen-contacto img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+  background-color: #003366;
+  color: white;
+  padding: 60px 20px 20px;
+}
+
+.container-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1 1 250px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  margin-bottom: 16px;
+  color: #00b4d8;
+}
+
+.footer-col p,
+.footer-col li,
+.footer-col a {
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+  color: #00b4d8;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #005b99;
+  padding-top: 20px;
+  font-size: 13px;
+  color: #ccc;
+}

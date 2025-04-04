@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FCR CONSULTORES SPA</title>
+
+  <!-- Tipografía moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+</head>
+<body>
+
+  <!-- Header con navegación -->
+  <header>
+    <div class="container">
+      <h1>FCR CONSULTORES SPA</h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#clientes">Clientes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección hero con fondo impactante -->
+  <section class="hero" data-aos="fade-in" id="inicio">
+    <div class="container">
+      <h2>Expertos en Consultoría SAP</h2>
+      <p>Soluciones tecnológicas para transformar tu negocio</p>
+      <a href="#nosotros" class="btn-primario">Conócenos</a>
+    </div>
+  </section>
+  <!--Nosotros-->
+  <section class="nosotros" id="nosotros">
+    <div class="container-nosotros">
+      <div class="texto-nosotros" data-aos="fade-right">
+        <h2>Sobre FCR</h2>
+        <p>Somos una empresa de consultoría tecnológica especializada en soluciones SAP. Nuestro equipo de expertos acompaña a organizaciones en sus procesos de transformación digital, integrando innovación, eficiencia y resultados reales.</p>
+        <p>Con años de experiencia, hemos desarrollado proyectos exitosos en múltiples industrias, siempre alineando tecnología y estrategia de negocio.</p>
+      </div>
+      <div class="imagen-nosotros" data-aos="fade-left">
+        <img src="img/consultoria.jpg" alt="Consultores trabajando">
+      </div>
+    </div>
+  </section>
+  <!--Servicios-->
+  <section class="servicios" id="servicios">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+      <div class="grid-servicios">
+        <div class="card-servicio" data-aos="zoom-in">
+          <img src="https://img.icons8.com/ios-filled/100/cloud-sync.png" alt="Implementación SAP">
+          <h3>Implementación SAP</h3>
+          <p>Desplegamos soluciones SAP adaptadas a tu negocio para mejorar procesos y resultados.</p>
+        </div>
+        <div class="card-servicio" data-aos="zoom-in">
+          <img src="https://img.icons8.com/ios-filled/100/maintenance.png" alt="Soporte Técnico">
+          <h3>Soporte SAP</h3>
+          <p>Brindamos soporte continuo para asegurar el rendimiento y estabilidad de tus sistemas.</p>
+        </div>
+        <div class="card-servicio" data-aos="zoom-in">
+          <img src="https://img.icons8.com/ios-filled/100/data-in-both-directions.png" alt="Migración S/4HANA">
+          <h3>Migración a S/4HANA</h3>
+          <p>Te ayudamos a modernizar tu plataforma SAP con una transición eficiente y segura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Clientes-->
+  <section class="clientes" id="clientes">
+    <div class="container">
+      <h2>Nuestros Clientes</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/logo-apple.png" alt="Apple"></div>
+          <div class="swiper-slide"><img src="img/logo-microsoft.png" alt="Microsoft"></div>
+          <div class="swiper-slide"><img src="img/logo-google.png" alt="Google"></div>
+          <div class="swiper-slide"><img src="img/logo-ibm.png" alt="IBM"></div>
+          <div class="swiper-slide"><img src="img/logo-oracle.png" alt="Oracle"></div>
+          <div class="swiper-slide"><img src="img/logo-sap.png" alt="SAP"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Testimonio-->
+  <section class="testimonios" id="testimonios" data-aos="fade-up">
+    <div class="container">
+      <h2>Testimonios</h2>
+      <div class="swiper testimonios-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <blockquote>
+              <p>“FCR nos acompañó en toda nuestra migración SAP. Su equipo es ágil, técnico y muy profesional.”</p>
+              <cite>- Laura P., CIO en EmpresaX</cite>
+            </blockquote>
+          </div>
+          <div class="swiper-slide">
+            <blockquote>
+              <p>“Excelente experiencia de consultoría. Se adaptaron a nuestras necesidades como si fueran parte del equipo.”</p>
+              <cite>- Juan R., Gerente TI en Grupo Alfa</cite>
+            </blockquote>
+          </div>
+          <div class="swiper-slide">
+            <blockquote>
+              <p>“Gracias a FCR optimizamos procesos clave en menos tiempo del esperado. Totalmente recomendados.”</p>
+              <cite>- Camila H., CTO en OmegaCorp</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+  <!--Contacto-->
+  <section class="contacto" id="contacto">
+    <div class="container-contacto">
+      <div class="formulario" data-aos="fade-right">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes preguntas o quieres agendar una reunión? Escríbenos.</p>
+        <form>
+          <input type="text" name="nombre" placeholder="Nombre completo" required>
+          <input type="email" name="correo" placeholder="Correo electrónico" required>
+          <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+      <div class="imagen-contacto" data-aos="fade-left">
+        <img src="img/form-contacto.jpg" alt="Persona escribiendo en laptop">
+      </div>
+    </div>
+  </section>
+  <!--Footer-->
+  <footer data-aos="fade-up">
+    <div class="container-footer">
+      <div class="footer-col">
+        <h3>FCR CONSULTORES SPA</h3>
+        <p>Soluciones tecnológicas SAP para empresas modernas.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>Email: contacto@fcrconsultores.cl</p>
+        <p>Tel: +56 9 1234 5678</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FCR CONSULTORES SPA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+<!-- Librerías externas -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- JS personalizado -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
