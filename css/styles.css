@@ -1,3 +1,12 @@
+/* ===== PALETA CORPORATIVA ===== */
+:root {
+  --color-primario: #395781;     /* Azul corporativo */
+  --color-secundario: #758AA7;   /* Azul suave */
+  --color-fondo: #FFFFFF;
+  --color-texto: #373737;
+  --color-hover: #2d4466;
+}
+
 /* =========================================
    RESET & CONFIGURACIÓN GLOBAL
 ========================================= */
@@ -10,13 +19,21 @@ html {
   padding: 0;
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
   line-height: 1.6;
+  font-weight: 300; /* o 400 si prefieres un poco más grueso */
+}
+
+h1, h2, h3, .titulo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--color-primario);
 }
 
 /* =========================================
@@ -31,34 +48,271 @@ body {
 /* =========================================
    HEADER Y NAVEGACIÓN
 ========================================= */
-header {
-  background-color: #003366;
-  color: #ffffff;
-  padding: 20px 0;
+.main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-primario);
+  padding: 16px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-header h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav {
   list-style: none;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 30px;
   padding: 0;
+  margin: 0;
 }
 
 .nav li a {
   color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: color 0.3s ease, text-shadow 0.3s ease; 
+  position: relative;
+  display: inline-block;
+}
+
+.nav li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 75%;
+  height: 2px;
+  background-color: #ffffff; 
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .nav li a:hover {
-  color: #00b4d8;
+  color: var(--color-secundario);
+  background-color: transparent;
 }
+
+.nav li a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-item {
+  position: relative;
+}
+
+.logo-header {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  transition: height 0.3s ease, filter 0.3s ease;
+}
+
+.logo-header img {
+  height: 53px;
+  width: auto;
+  display: block;
+  transition: height 0.3s ease;
+}
+
+/* ===== SCROLL EFFECT ===== */
+.main-header.scrolled {
+  background-color: #ffffff;
+  padding: 8px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-header.scrolled .logo-header img {
+  height: 40px;
+}
+
+.main-header.scrolled .nav li a {
+  color: var(--color-primario);
+}
+
+.main-header.scrolled .nav li a:hover {
+  color: var(--color-hover);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.main-header.scrolled .nav li a::after,
+.main-header.scrolled .submenu li a::after,
+.main-header.scrolled .language-options li a .lang-text::after {
+  background-color: var(--color-primario);
+}
+
+/* ===== SUBMENÚS ===== */
+.submenu,
+.language-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  z-index: 999;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submenu {
+  background-color: var(--color-primario);
+  left: 0;
+  min-width: 180px;
+}
+
+.submenu li {
+  display: block;
+}
+
+.submenu li a {
+  color: #ffffff;
+  padding: 10px 16px;
+  display: block;
+  white-space: nowrap;
+  background-color: transparent;
+  transition: color 0.2s ease-in-out;
+  position: relative;
+}
+
+.submenu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 75%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.submenu li a:hover {
+  color: var(--color-secundario);
+  background-color: transparent;
+}
+
+.submenu li a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-item:hover .submenu,
+.nav-item.language:hover .language-options {
+  display: block;
+}
+
+.main-header.scrolled .submenu {
+  background-color: #ffffff;
+}
+
+.main-header.scrolled .submenu li a {
+  color: var(--color-primario);
+}
+
+.main-header.scrolled .submenu li a:hover {
+  color: var(--color-hover);
+}
+
+/* ===== IDIOMA ===== */
+.nav-item.language a {
+  font-size: 15px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.language-options {
+  background-color: var(--color-primario);
+  right: 0;
+  min-width: 160px;
+  padding: 6px 0;
+}
+
+.language-options li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  color: #ffffff;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.language-options li a .lang-text {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  padding-bottom: 2px;
+}
+
+.language-options li a .lang-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 75%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.language-options li a:hover .lang-text::after {
+  transform: scaleX(1);
+}
+
+.main-header.scrolled .language-options {
+  background-color: #ffffff;
+}
+
+.main-header.scrolled .language-options li a {
+  color: var(--color-primario);
+}
+
+.main-header.scrolled .language-options li a:hover {
+  color: var(--color-hover);
+}
+
+/* Eliminar subrayado general en ícono */
+.language-toggle::after,
+.language-options li a::after {
+  display: none !important;
+}
+
+/* Bandera */
+.flag-icon {
+  width: 18px;
+  height: auto;
+  transform: translateY(1px);
+}
+
+/* Ícono mundo */
+.icon-world {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-item.language:hover .icon-world {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
 
 /* =========================================
    HERO (INTRO)
@@ -86,28 +340,37 @@ header h1 {
 }
 
 .hero h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 30px;  /* Antes quizás era 40px+ */
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 15px;
 }
 
 .hero p {
   font-size: 18px;
-  margin-bottom: 30px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  margin-bottom: 25px;
 }
 
 .btn-primario {
   display: inline-block;
-  background-color: #00b4d8;
+  background-color: #758AA7;
   color: white;
-  padding: 12px 24px;
+  font-weight: 600;
+  padding: 10px 20px; /* reducido ligeramente */
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 6px;
+  font-size: 15px;
   transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primario:hover {
-  background-color: #0096c7;
+  background-color: #2d4466;
 }
 
 /* =========================================
@@ -138,7 +401,7 @@ header h1 {
 .texto-nosotros h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  color: #003366;
+  color: var(--color-primario);
 }
 
 .texto-nosotros p {
@@ -168,7 +431,7 @@ header h1 {
 
 .servicios h2 {
   font-size: 32px;
-  color: #003366;
+  color: var(--color-primario);
   margin-bottom: 40px;
 }
 
@@ -200,7 +463,7 @@ header h1 {
 .card-servicio h3 {
   font-size: 20px;
   margin-bottom: 10px;
-  color: #003366;
+  color: var(--color-primario);
 }
 
 .card-servicio p {
@@ -219,7 +482,7 @@ header h1 {
 
 .clientes h2 {
   font-size: 32px;
-  color: #003366;
+  color: var(--color-primario);
   margin-bottom: 40px;
 }
 
@@ -261,13 +524,13 @@ header h1 {
 
 .testimonios h2 {
   font-size: 32px;
-  color: #003366;
+  color: var(--color-primario);
   margin-bottom: 40px;
 }
 
 .testimonios blockquote {
   background: #f9f9f9;
-  border-left: 5px solid #00b4d8;
+  border-left: 5px solid var(--color-secundario);
   padding: 30px;
   font-style: italic;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
@@ -284,7 +547,7 @@ header h1 {
 
 .testimonios cite {
   font-weight: bold;
-  color: #003366;
+  color: var(--color-primario);
 }
 
 /* =========================================
@@ -310,7 +573,7 @@ header h1 {
 
 .formulario h2 {
   font-size: 32px;
-  color: #003366;
+  color: var(--color-primario);
   margin-bottom: 10px;
 }
 
@@ -334,7 +597,7 @@ header h1 {
 }
 
 .formulario button {
-  background-color: #003366;
+  background-color: var(--color-primario);
   color: white;
   padding: 12px;
   border: none;
@@ -345,7 +608,7 @@ header h1 {
 }
 
 .formulario button:hover {
-  background-color: #005b99;
+  background-color: var(--color-hover);
 }
 
 .imagen-contacto {
@@ -363,7 +626,7 @@ header h1 {
    FOOTER
 ========================================= */
 footer {
-  background-color: #003366;
+  background-color: var(--color-primario);
   color: white;
   padding: 60px 20px 20px;
 }
@@ -384,7 +647,7 @@ footer {
 .footer-col h3,
 .footer-col h4 {
   margin-bottom: 16px;
-  color: #00b4d8;
+  color: var(--color-secundario);
 }
 
 .footer-col p,
@@ -399,13 +662,13 @@ footer {
 
 .footer-col a:hover {
   text-decoration: underline;
-  color: #00b4d8;
+  color: var(--color-secundario);
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
-  border-top: 1px solid #005b99;
+  border-top: 1px solid var(--color-hover);
   padding-top: 20px;
   font-size: 13px;
   color: #ccc;

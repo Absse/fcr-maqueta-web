@@ -32,4 +32,21 @@ AOS.init({
     },
     effect: 'fade'
   });
+
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.main-header');
+    const logo = document.querySelector('.logo-img');
+    const worldIcon = document.querySelector('#world-icon');
   
+    if (!header || !logo) return; // prevención por si no existe
+  
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+      logo.src = 'img/logo-fcr-color.svg';
+      worldIcon.src = 'img/mundo-idiomas-color.svg'; // cambia a ícono azul
+    } else {
+      header.classList.remove('scrolled');
+      logo.src = 'img/logo-fcr-blanco.svg';
+      worldIcon.src = 'img/mundo-idiomas-blanco.svg'; // vuelve al blanco
+    }
+  });

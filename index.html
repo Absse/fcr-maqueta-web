@@ -6,8 +6,7 @@
   <title>FCR CONSULTORES SPA</title>
 
   <!-- Tipografía moderna -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css" />
   <!-- AOS CSS -->
@@ -20,21 +19,56 @@
 <body>
 
   <!-- Header con navegación -->
-  <header>
-    <div class="container">
-      <h1>FCR CONSULTORES SPA</h1>
-      <nav>
-        <ul class="nav">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#clientes">Clientes</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
+  <header class="main-header">
+    <div class="nav-container">
+      <a href="#" class="logo-header">
+        <img src="img/logo-fcr-blanco.svg" alt="FCR Consultores" class="logo-img">
+      </a>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#">Nosotros</a>
+          <ul class="submenu">
+            <li><a href="#">Quiénes somos</a></li>
+            <li><a href="#">Nuestro equipo</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#">Servicios</a>
+          <ul class="submenu">
+            <li><a href="#">Consultoría SAP</a></li>
+            <li><a href="#">Transformación Digital</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a href="#">Contacto</a>
+        </li>
+        <li class="nav-item language">
+          <a href="#" class="language-toggle">
+            <img src="img/mundo-idiomas-blanco.svg" alt="Idioma" class="icon-world" id="world-icon"/>
+          </a>
+          <ul class="submenu language-options">
+            <li><a href="#">
+              <span class="flag-icon"><img src="assets/flags/4x3/cl.svg" alt="CL"></span>
+              <span class="lang-text">Español</span>
+            </a></li>
+            <li><a href="#">
+              <span class="flag-icon"><img src="assets/flags/4x3/us.svg" alt="US"></span>
+              <span class="lang-text">English</span>
+            </a></li>
+            <li><a href="#">
+              <span class="flag-icon"><img src="assets/flags/4x3/br.svg" alt="BR"></span>
+              <span class="lang-text">Português</span>
+            </a></li>
+          </ul>
+        </li>
+        
+      </ul>
     </div>
   </header>
-
+  
   <!-- Sección hero con fondo impactante -->
   <section class="hero" data-aos="fade-in" id="inicio">
     <div class="container">
