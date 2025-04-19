@@ -1,0 +1,17 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# NodeJS (si en el futuro instalas npm o node_modules)
+node_modules/
+
+# Directorios de caché o temporales
+dist/
+build/
+.cache/
+.vscode/
+
+# Archivos personales o backups
+*.log
+*.tmp
+*.bak
