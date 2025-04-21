@@ -102,3 +102,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+//SERVICIOS
+
+const elementosAnimados = document.querySelectorAll('[data-animacion]');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animar');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+elementosAnimados.forEach(el => {
+  observer.observe(el);
+});

@@ -401,6 +401,89 @@ h1, h2, h3, .titulo {
   color: #ffffff;
 }
 
+/*===========SERVICIOS============*/
+
+.seccion-servicios {
+  padding: 80px 20px;
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+  border-radius: 30px;
+  margin: 40px 20px;
+}
+
+.contenedor-servicios {
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titulo-seccion h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.titulo-seccion p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card-servicio {
+  background: #ffffffdd;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card-servicio img {
+  width: 110px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3));
+}
+
+.card-servicio h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+.card-servicio p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.card-servicio:hover {
+  transform: translateY(-10px) scale(1.02) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  background: #ffffffee;
+}
+
+.animar {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.8s ease-out;
+}
+
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 /* =========================================
    SECCIÓN: NOSOTROS
@@ -728,6 +811,22 @@ footer {
     font-size: 1rem;
   }
 
+  /*=======SERVICIOS========*/
+
+  .grid-servicios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-servicio {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
   
 }
 
@@ -803,6 +902,19 @@ footer {
   .quienes-somos__texto p {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  /*===========SERVICIOS=============*/
+
+  .titulo-seccion h2 {
+    font-size: 2.2rem;
+  }
+  .titulo-seccion p {
+    font-size: 1rem;
+  }
+
+  .grid-servicios {
+    grid-template-columns: 1fr;
   }
 
 }
