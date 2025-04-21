@@ -639,6 +639,10 @@ footer {
 
   /* ===== RESPONSIVE HERO ===== */
 
+  .hero {
+    background-attachment: scroll;
+  }
+  
   .hero-title {
     font-size: 2.5rem;
   }
