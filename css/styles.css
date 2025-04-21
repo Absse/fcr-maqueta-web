@@ -674,7 +674,158 @@ h1, h2, h3, .titulo {
   font-size: 1rem;
 }
 
+/*=========CONTACTO============*/
 
+.contacto-principal {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente el botón */
+  align-items: center;      /* Centrar verticalmente */
+  padding: 0 80px;
+  background: 
+    linear-gradient(to right, rgba(5, 5, 59, 0.8), rgba(4, 51, 153, 0.7)),
+    url('/img/contacto.png') no-repeat center center;
+  background-size: 100%; /* 🔥 Reduce el zoom de la imagen */
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.btn-contacto {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-contacto:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
+}
+
+
+
+/* Modal */
+.modal-contacto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Oculto inicialmente */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 35, 0.8);
+}
+
+.modal-contenido {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  max-width: 800px;
+  width: 90%;
+  z-index: 10000;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Fade In */
+.modal-contacto.visible .modal-contenido {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botón cerrar */
+.btn-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Formulario dentro del modal */
+#form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-grupo {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+  flex: 1 1 48%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+textarea {
+  flex: 1 1 100%;
+  height: 120px;
+}
+
+.btn-enviar {
+  background-color: var(--color-primario);
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+  background-color: var(--color-hover);
+}
+
+.btn-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+.btn-cerrar:hover {
+  transform: rotate(90deg); /* pequeño giro al pasar mouse */
+}
+
+.icon-cerrar {
+  width: 24px;
+  height: 24px;
+  stroke: #0a0a23;
+}
 /* =========================================
    SECCIÓN: NOSOTROS
 ========================================= */
@@ -1023,6 +1174,19 @@ footer {
     padding: 20px 0;
   }
 
+  /*=========CONTACTO=========*/
+
+  .contenedor-contacto {
+    flex-direction: column;
+  }
+
+  .contacto-imagen {
+    height: 250px;
+  }
+
+  .contacto-formulario {
+    padding: 40px 30px;
+  }
   
 }
 
@@ -1142,6 +1306,11 @@ footer {
     margin-bottom: 40px;
   }
 
+  .contacto-principal {
+    padding: 40px 20px;
+    background-size: cover; /* En mobile que vuelva a ocupar */
+  }
+
 }
 /* ===== MOBILE PEQUEÑO (Hasta 575px) ===== */
 @media (max-width: 575px) {
@@ -1231,6 +1400,16 @@ footer {
 
   .somos-contenido p {
     font-size: 0.95rem;
+  }
+
+  /*==========CONTACTO=========*/
+
+  .contacto-formulario h2 {
+    font-size: 26px;
+  }
+
+  .btn-enviar {
+    font-size: 16px;
   }
 
 }

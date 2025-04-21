@@ -228,19 +228,46 @@
       </div>
     </section>
 
-    <!--Nosotros-->
-    <section class="nosotros" id="nosotros">
-      <div class="container-nosotros">
-        <div class="texto-nosotros" data-aos="fade-right">
-          <h2>Sobre FCR</h2>
-          <p>Somos una empresa de consultoría tecnológica especializada en soluciones SAP. Nuestro equipo de expertos acompaña a organizaciones en sus procesos de transformación digital, integrando innovación, eficiencia y resultados reales.</p>
-          <p>Con años de experiencia, hemos desarrollado proyectos exitosos en múltiples industrias, siempre alineando tecnología y estrategia de negocio.</p>
-        </div>
-        <div class="imagen-nosotros" data-aos="fade-left">
-          <img src="img/consultoria.jpg" alt="Consultores trabajando">
-        </div>
-      </div>
+    <!-- Sección Contacto -->
+    <!-- Botón que abre el formulario -->
+    <section id="contacto-principal" class="contacto-principal">
+      <button id="btn-abrir-formulario" class="btn-contacto">Contacto</button>
     </section>
+
+    <!-- Modal oculto inicialmente -->
+    <div id="modal-contacto" class="modal-contacto">
+      <div class="modal-overlay"></div>
+      <div class="modal-contenido animar-fade">
+        <button id="btn-cerrar-modal" class="btn-cerrar" aria-label="Cerrar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#0a0a23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-cerrar">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>        
+        <h2>Contáctanos</h2>
+        <form id="form-contacto">
+          <div class="form-grupo">
+            <input type="text" placeholder="Nombre" required>
+            <input type="text" placeholder="Apellido" required>
+          </div>
+          <div class="form-grupo">
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Compañía" required>
+          </div>
+          <div class="form-grupo">
+            <select required>
+              <option value=\"\">Selecciona tu país...</option>
+              <option value=\"CL\">Chile</option>
+              <option value=\"MX\">México</option>
+            </select>
+          </div>
+          <div class="form-grupo">
+            <textarea rows="4" placeholder="Mensaje" required></textarea>
+          </div>
+          <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+      </div>
+    </div>
   </main>    
   <!--Footer-->
   <footer data-aos="fade">

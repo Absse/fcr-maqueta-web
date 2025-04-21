@@ -5,6 +5,35 @@ AOS.init({
   once: true
 });
 
+const btnAbrir = document.getElementById('btn-abrir-formulario');
+const modal = document.getElementById('modal-contacto');
+const btnCerrar = document.getElementById('btn-cerrar-modal');
+const overlay = document.querySelector('.modal-overlay');
+
+// Abrir Modal
+btnAbrir.addEventListener('click', () => {
+  modal.style.display = 'flex';
+  setTimeout(() => {
+    modal.classList.add('visible');
+  }, 50);
+});
+
+// Cerrar Modal
+btnCerrar.addEventListener('click', () => {
+  modal.classList.remove('visible');
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 500);
+});
+
+// Cerrar al hacer click en el overlay
+overlay.addEventListener('click', () => {
+  modal.classList.remove('visible');
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 500);
+});
+
 // Variables del DOM
 const header = document.querySelector('.main-header');
 const menuToggle = document.getElementById('menu-toggle');
@@ -196,7 +225,7 @@ const swiper = new Swiper('.clientes-swiper', {
   centeredSlides: true,
   spaceBetween: 20,
   autoplay: {
-    delay: 3000,
+    delay: 3500,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
