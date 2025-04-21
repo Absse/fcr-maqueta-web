@@ -1552,6 +1552,32 @@ textarea {
 
 @media (max-width: 500px) {
 
+  /*===========CONTACTO=========*/
+  .modal-contenido {
+    padding: 20px; /* 🔥 Aseguramos que tenga margen interno suave */
+  }
+
+  #form-contacto {
+    width: 100%;
+    max-width: 360px; /* 🔥 Evitamos que se expanda demasiado */
+    margin: 0 auto;
+  }
+
+  #form-contacto input,
+  #form-contacto select,
+  #form-contacto textarea {
+    width: 100%;
+    padding: 12px 15px; /* 🔥 Un poco más de padding horizontal en los campos */
+    box-sizing: border-box;
+  }
+
+  .btn-enviar {
+    width: 100%;
+    max-width: 360px;
+    margin: 20px auto 0 auto;
+    padding: 12px;
+  }
+
   /*=======FOOTER========*/
   .footer-container {
     flex-direction: column;
