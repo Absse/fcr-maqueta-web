@@ -267,7 +267,12 @@ document.querySelectorAll('.clientes-swiper .swiper-slide').forEach((slide) => {
     swiper.autoplay.stop(); 
     setTimeout(() => {
       swiper.autoplay.start();
-    }, 8000); // pausa 8 segundos antes de volver a girar
+    }, 8000);
+
+    // 🔥 Forzar recalcular layout después de centrar
+    setTimeout(() => {
+      swiper.update(); // 🚀 Esto re-calcula visibilidad, espacios y vuelve a mostrar 5 logos
+    }, 550); // esperar que termine el slide antes de actualizar
   });
 });
 
