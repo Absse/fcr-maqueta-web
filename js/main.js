@@ -137,7 +137,7 @@ elementosAnimados.forEach(el => {
 const clientes = [
   {
     nombre: "Colbún",
-    color: "#0061A8",
+    color: "#043c84",
     proyectos: [
       "Soporte Basis Operación y Proyectos SAP",
       "Implementación de SAP Replication Server (SLT)",
@@ -146,7 +146,7 @@ const clientes = [
   },
   {
     nombre: "Sigdo Koopers",
-    color: "#5F4B8B",
+    color: "#54545c",
     proyectos: [
       "Implementación de SAP Replication Server (SLT)",
       "Implementación de HANA Data Tiering"
@@ -154,6 +154,7 @@ const clientes = [
   },
   {
     nombre: "Grupo Saesa",
+    color: "#4c1cfc",
     proyectos: [
       "Implementación GRC Access Control ECC + IS-U",
       "Soporte Basis Proyecto implementación SAP IS-U",
@@ -163,6 +164,7 @@ const clientes = [
   },
   {
     nombre: "Latam Airlines",
+    color: "#3c448c",
     proyectos: [
       "Migración GRC Access Control y actualización de matriz de riesgo de acceso",
       "Remediación de Roles y Perfiles por conversión a S/4HANA"
@@ -170,6 +172,7 @@ const clientes = [
   },
   {
     nombre: "Carozzi",
+    color: "#e40414",
     proyectos: [
       "Migración GRC Access Control y actualización de matriz de riesgo de acceso",
       "Remediación de Roles y Perfiles por conversión a S/4HANA"
@@ -177,6 +180,7 @@ const clientes = [
   },
   {
     nombre: "Codelco",
+    color: "#e44c04",
     proyectos: [
       "Migración GRC Access Control y actualización de matriz de riesgo de acceso",
       "Remediación de Roles y Perfiles por conversión a S/4HANA",

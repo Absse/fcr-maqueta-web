@@ -826,98 +826,118 @@ textarea {
   height: 24px;
   stroke: #0a0a23;
 }
-/* =========================================
-   SECCIÓN: NOSOTROS
-========================================= */
-.nosotros {
-  background-color: #ffffff;
-  padding: 80px 20px;
-}
-
-.container-nosotros {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
-}
-
-.texto-nosotros, .imagen-nosotros {
-  flex: 1 1 400px;
-  padding: 20px;
-}
-
-.texto-nosotros {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  background: #fff;
-}
-
-.texto-nosotros h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #003366;
-}
-
-.texto-nosotros p {
-  font-size: 16px;
-  margin-bottom: 16px;
-}
-
-.imagen-nosotros img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
 
 /* =========================================
    FOOTER
 ========================================= */
-footer {
-  background-color: #003366;
-  color: white;
-  padding: 60px 20px 20px;
+.footer {
+  background-color: var(--color-primario);
+  padding: 60px 20px 30px 20px;
+  font-size: 14px;
+  color: var(--color-fondo);
 }
 
-.container-footer {
+.footer-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%;
-  margin: 0 auto;
-  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  border-top: 1px solid var(--color-secundario);
+  padding-top: 40px;
+  align-items: flex-start;
 }
 
 .footer-col {
-  flex: 1 1 250px;
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px; /* Controlamos altura mínima para alinear */
+  position: relative;
 }
 
-.footer-col h3, .footer-col h4 {
-  margin-bottom: 16px;
-  color: #00b4d8;
+/* Borde separador entre columnas excepto el logo */
+.footer-col:not(.logo-col)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-.footer-col p, .footer-col li, .footer-col a {
-  font-size: 14px;
-  color: #ffffff;
+.logo-col {
+  flex: 0 0 320px; /* 🔥 Fijamos un ancho para la columna del logo */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Puedes poner flex-start si quieres alineado a la izquierda */
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.footer-logo {
+  width: 200px; /* 🔥 Ahora el logo puede ser más grande */
+  max-width: 100%;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: var(--color-fondo);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: var(--color-fondo);
   text-decoration: none;
-  margin-bottom: 8px;
-  display: block;
+  transition: color 0.3s;
 }
 
-.footer-col a:hover {
-  text-decoration: underline;
-  color: #00b4d8;
+.footer-col ul li a:hover {
+  color: var(--color-hover);
 }
 
+/* Footer Bottom */
 .footer-bottom {
-  text-align: center;
-  margin-top: 40px;
-  border-top: 1px solid #005b99;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-fondo);
+  border-top: 1px solid var(--color-secundario);
   padding-top: 20px;
-  font-size: 13px;
-  color: #ccc;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-bottom-links a {
+  color: var(--color-fondo);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--color-hover);
 }
 
 /* Versión Desktop */
@@ -1187,6 +1207,59 @@ footer {
   .contacto-formulario {
     padding: 40px 30px;
   }
+
+  /*============FOOTER==========*/
+
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* 🔥 COLUMNAS */
+  .footer-col {
+    flex: 1 1 20%;
+    order: 1; /* Todas las columnas tienen mismo orden */
+    text-align: center;
+    padding: 15px;
+    position: relative;
+  }
+
+  .footer-col:not(:first-child)::before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20px;
+    bottom: 20px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-col h4 {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul {
+    text-align: left;
+  }
+
+  /* 🔥 LOGO */
+  .logo-col {
+    flex: 1 1 100%;
+    order: 99; /* El logo queda al final */
+    text-align: center;
+    margin-top: 30px;
+    padding-right: 0;
+  }
+
+  /* Footer bottom */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
   
 }
 
@@ -1311,6 +1384,60 @@ footer {
     background-size: cover; /* En mobile que vuelva a ocupar */
   }
 
+  /*============FOOTER=========*/
+
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* 🔥 COLUMNAS */
+  .footer-col {
+    flex: 1 1 45%; /* 🔥 Dos columnas por fila */
+    text-align: center;
+    padding: 10px;
+    position: relative;
+  }
+
+  /* 🔥 Mantenemos líneas separadoras */
+  .footer-col:not(:first-child)::before {
+    display: none; /* Opcional: podríamos eliminar líneas en mobile si quieres más limpio */
+  }
+
+  .footer-col h4 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul {
+    text-align: center;
+  }
+
+  /* 🔥 LOGO AL FINAL */
+  .logo-col {
+    flex: 1 1 100%;
+    order: 99; /* 🔥 El logo siempre último */
+    text-align: center;
+    margin-top: 30px;
+    padding-right: 0;
+  }
+
+  /* Footer bottom */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .footer-logo {
+    width: 240px; /* 🔥 Más grande */
+    max-width: 100%;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+  }
+
 }
 /* ===== MOBILE PEQUEÑO (Hasta 575px) ===== */
 @media (max-width: 575px) {
@@ -1412,5 +1539,60 @@ footer {
     font-size: 16px;
   }
 
+  /*=============FOOTER=======*/
+
+  .footer-logo {
+    width: 340px; /* 🔥 Más grande */
+    max-width: 100%;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  /*=======FOOTER========*/
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* 🔥 Reducimos separación general */
+  }
+
+  .footer-col {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 5px 0;
+  }
+
+  .footer-col::before {
+    display: none;
+  }
+
+  .footer-col h4,
+  .footer-col ul {
+    text-align: center;
+  }
+
+  /* 🔥 Logo optimizado */
+  .logo-col {
+    flex: 1 1 100%;
+    order: 99;
+    text-align: center;
+    margin-top: 0; /* 🔥 Eliminamos separación extra */
+    padding: 0;
+  }
+
+  .footer-logo {
+    width: 180px;
+    margin-top: 10px; /* 🔥 Solo un pequeño margen si quieres */
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
 }
 
