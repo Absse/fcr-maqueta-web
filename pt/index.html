@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Consultoria líder em transformação digital SAP. Soluções sob medida para grandes empresas no Chile e América Latina.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../img/fcr_logo_icono.ico" type="image/x-icon">
+  <title>FCR CONSULTORES SPA</title>
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/styles.css" />
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <!-- Cabeçalho com navegação -->
+  <header class="main-header">
+    <div class="nav-container">
+      <a href="#" class="logo-header">
+        <img src="../img/logo-fcr-blanco.svg" alt="FCR Consultores" class="logo-img">
+      </a>
+      <a href="#" class="language-toggle-mobile">
+        <img src="../img/mundo-idiomas-blanco.svg" alt="Idioma" class="icon-world mobile-world-icon" id="mobile-world-icon"/>
+      </a>
+      <!-- Submenu de idiomas mobile -->
+      <ul class="language-options-mobile">
+        <li><a href="../index.html">
+          <span class="flag-icon"><img src="../assets/flags/4x3/cl.svg" alt="CL"></span>
+          <span class="lang-text">Espanhol</span>
+        </a></li>
+        <li><a href="../en/index.html">
+          <span class="flag-icon"><img src="../assets/flags/4x3/us.svg" alt="US"></span>
+          <span class="lang-text">Inglês</span>
+        </a></li>
+        <li><a href="../pt/index.html">
+          <span class="flag-icon"><img src="../assets/flags/4x3/br.svg" alt="BR"></span>
+          <span class="lang-text">Português</span>
+        </a></li>
+      </ul>
+
+      <!-- Botão hamburguer -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <!-- Navegação principal -->
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#">Sobre nós</a>
+          <ul class="submenu">
+            <li><a href="#quienes-somos">Quem somos</a></li>
+            <!-- <li><a href="#">Nossa equipe</a></li> -->
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#servicios">Serviços</a>
+          <ul class="submenu">
+            <li><a href="#sap-basis">SAP Basis</a></li>
+            <li><a href="#solution-manager">Solution Manager</a></li>
+            <li><a href="#seguridad">Segurança</a></li>
+            <li><a href="#alianza-estrategica">Aliança Estratégica</a></li>
+            <li><a href="#grc">GRC</a></li>
+            <li><a href="#auditoria">Auditoria</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#clientes">Clientes</a>
+          <ul class="submenu">
+            <li><a href="#logo-colbun" data-cliente="Colbún">Colbún</a></li>
+            <li><a href="#logo-sigdo-koopers" data-cliente="Sigdo Koopers">Sigdo Koopers</a></li>
+            <li><a href="#logo-grupo-saesa" data-cliente="Grupo Saesa">Grupo Saesa</a></li>
+            <li><a href="#logo-enel-brasil" data-cliente="Enel Brasil">Enel Brasil</a></li>
+            <li><a href="#logo-latam-airlines" data-cliente="Latam Airlines">Latam Airlines</a></li>
+            <li><a href="#logo-carozzi" data-cliente="Carozzi">Carozzi</a></li>
+            <li><a href="#logo-parque-arauco" data-cliente="Parque Arauco">Parque Arauco</a></li>
+            <li><a href="#logo-mutual-de-seguridad" data-cliente="Mutual de Seguridad">Mutual de Seguridad</a></li>
+            <li><a href="#logo-codelco" data-cliente="Codelco">Codelco</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" id="menu-contacto">Contato</a>
+        </li>
+        <li class="nav-item language">
+          <a href="#" class="language-toggle">
+            <img src="../img/mundo-idiomas-blanco.svg" alt="Idioma" class="icon-world" id="world-icon"/>
+          </a>
+          <ul class="language-options">
+            <li><a href="../index.html">
+              <span class="flag-icon"><img src="../assets/flags/4x3/cl.svg" alt="CL"></span>
+              <span class="lang-text">Espanhol</span>
+            </a></li>
+            <li><a href="../en/index.html">
+              <span class="flag-icon"><img src="../assets/flags/4x3/us.svg" alt="US"></span>
+              <span class="lang-text">Inglês</span>
+            </a></li>
+            <li><a href="../pt/index.html">
+              <span class="flag-icon"><img src="../assets/flags/4x3/br.svg" alt="BR"></span>
+              <span class="lang-text">Português</span>
+            </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <img src="../img/logo-blanco.svg" alt="FCR Consultores" class="hero-logo">
+        <h1 class="hero-title">Liderando a transformação digital da sua organização com SAP</h1>
+        <p class="hero-subtitle">Experiência, inovação e resultados para impulsionar o seu negócio.</p>
+        <a href="#conocenos" class="hero-button">Saiba mais</a>
+        <div class="scroll-down-svg">
+          <svg class="arrow" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          <svg class="arrow" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>       
+      </div>
+    </section>
+    <!-- QUEM SOMOS -->
+    <section class="quienes-somos" id="quienes-somos">
+      <div class="quienes-somos__imagen"></div>
+      <div class="quienes-somos__contenido">
+        <div class="quienes-somos__texto">
+          <h2>Quem Somos</h2>
+          <p>Na FCR Consultores, lideramos a transformação digital das organizações por meio de soluções SAP de classe mundial.</p>
+          <p>Desde 2018, acompanhamos empresas como Codelco, LATAM e Carozzi em seus processos de implementação, suporte e otimização tecnológica.</p>
+          <p>Mais de 5 anos de experiência apoiando empresas líderes na transformação digital, com foco em eficiência, inovação e resultados mensuráveis.</p>
+          <p>Com uma equipe altamente especializada e parcerias estratégicas como a IBM, impulsionamos a inovação, a transparência e a excelência em cada projeto.</p>
+        </div>
+      </div>
+    </section>
+    <section id="servicios" class="seccion-servicios">
+      <div class="contenedor-servicios">
+        <div class="titulo-seccion">
+          <h2>Nossos Serviços</h2>
+          <p>Potencializamos sua transformação digital com soluções SAP de classe mundial.</p>
+        </div>
+        <div class="grid-servicios">
+          <div class="card-servicio" id="sap-basis" data-animacion>
+            <img src="../img/logos-servicios/sap-basis.png" alt="SAP Basis">
+            <h3>SAP Basis</h3>
+            <p>Instalamos, migramos e mantemos seu ambiente SAP atualizado com as tecnologias mais recentes, oferecendo monitoramento contínuo, gestão de patches e suporte especializado 24/7, garantindo desempenho ótimo e seguro.</p>
+          </div>
+          <div class="card-servicio" id="solution-manager" data-animacion>
+            <img src="../img/logos-servicios/solution.png" alt="Solution Manager">
+            <h3>Solution Manager</h3>
+            <p>Implementamos e configuramos o SAP Solution Manager para a gestão centralizada do seu ambiente SAP, incluindo monitoramento em tempo real, gestão de projetos, documentação de processos e suporte técnico especializado.</p>
+          </div>
+          <div class="card-servicio" id="seguridad" data-animacion>
+            <img src="../img/logos-servicios/seguridad.png" alt="Segurança">
+            <h3>Segurança</h3>
+            <p>Fortalecemos a segurança do seu ambiente SAP com design de papéis, implementação de SAP GRC e auditorias otimizadas, garantindo conformidade regulatória e gestão efetiva de riscos.</p>
+          </div>
+          <div class="card-servicio" id="alianza-estrategica" data-animacion>
+            <img src="../img/logos-servicios/estrategia.png" alt="Aliança Estratégica">
+            <h3>Aliança Estratégica</h3>
+            <p>Como parceiros da IBM, a FCR Consultores colabora há mais de cinco anos na execução de projetos estratégicos de transformação digital. Oferecemos soluções SAP sob medida, integrando as melhores práticas e tecnologias da IBM para maximizar a eficiência, inovação e resultados dos nossos clientes.</p>
+          </div>
+          <div class="card-servicio" id="grc" data-animacion>
+            <img src="../img/logos-servicios/grc.png" alt="Gestão de Riscos e Conformidade">
+            <h3>GRC</h3>
+            <p>Analisamos processos empresariais, desenhamos controles personalizados, mapeamos regulamentações (GDPR, SOX, HIPAA) e geramos relatórios de conformidade, garantindo controle e mitigação efetiva de riscos.</p>
+          </div>
+          <div class="card-servicio" id="auditoria" data-animacion>
+            <img src="../img/logos-servicios/auditoria.png" alt="Auditoria">
+            <h3>Auditoria</h3>
+            <p>Desenvolvemos estratégias de auditoria adaptadas à sua empresa, automatizamos processos de coleta e análise de dados e garantimos conformidade com as melhores práticas e normas regulatórias.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CLIENTES -->
+    <section id="clientes" class="clientes-section">
+      <div class="container">
+        <p class="clientes-subtitle">Confiança. Inovação. Resultados.</p>
+        <h2 class="section-title">Nossos Clientes</h2>
+        <div class="linea-decorativa"></div>
+        <div class="fade-in">
+          <p class="clientes-intro">
+            Na FCR Consultores, combinamos <strong>especialização técnica</strong>, <strong>compromisso com a excelência</strong> e uma <strong>visão estratégica orientada para resultados</strong>. Desde 2018, construímos relacionamentos sólidos baseados em <strong>confiança</strong>, <strong>transparência</strong> e <strong>soluções SAP personalizadas</strong>.<br><br>
+            Nossa equipe de consultores certificados atua com <strong>dedicação</strong>, <strong>proatividade</strong> e <strong>profundo conhecimento da indústria</strong>, desenvolvendo projetos de alto impacto que otimizam processos, fortalecem a segurança e garantem conformidade regulatória.<br><br>
+            Empresas líderes como <strong>IBM, Colbún, Carozzi, Parque Arauco, LATAM Airlines e Codelco</strong> nos escolhem por nossa <strong>capacidade de inovação</strong>, <strong>resposta ágil</strong> e <strong>compromisso inabalável</strong> com o sucesso das suas iniciativas SAP.
+          </p>
+        </div>
+        <!-- Swiper Container -->
+        <div class="swiper clientes-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slides de Logos -->
+            <div class="swiper-slide" id="logo-colbun">
+              <img src="../img/clientes/colbun.png" alt="Colbún" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-sigdo-koopers">
+              <img src="../img/clientes/sigdo-koopers.png" alt="Sigdo koopers" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-grupo-saesa">
+              <img src="../img/clientes/grupo-saesa.png" alt="Grupo Saesa" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-enel-brasil">
+              <img src="../img/clientes/enel-brasil.png" alt="Enel Brasil" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-latam-airlines">
+              <img src="../img/clientes/latam.png" alt="Latam" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-carozzi">
+              <img src="../img/clientes/carozzi.png" alt="Carozzi" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-parque-arauco">
+              <img src="../img/clientes/parque-arauco.png" alt="Parque Arauco" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-mutual-de-seguridad">
+              <img src="../img/clientes/mutual.png" alt="Mutual de Seguridad" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-codelco">
+              <img src="../img/clientes/codelco.png" alt="Codelco" loading="lazy">
+            </div>
+            <!-- Adicione mais logos se necessário -->
+          </div>
+        </div>
+        <!-- Conteúdo dinâmico do projeto -->
+        <div id="cliente-info" class="cliente-info">
+          <div class="cliente-borde"></div>
+          <div class="cliente-contenido">
+            <h3 class="cliente-nombre">Nome do Cliente</h3>
+            <p class="cliente-proyecto">Projetos realizados:</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Seção Contato -->
+    <section id="contacto-principal" class="contacto-principal">
+      <button id="btn-abrir-formulario" class="btn-contacto">Fale Conosco</button>
+    </section>
+    <!-- Modal oculto inicialmente -->
+    <div id="modal-contacto" class="modal-contacto">
+      <div class="modal-overlay"></div>
+      <div class="modal-contenido animar-fade">
+        <button id="btn-cerrar-modal" class="btn-cerrar" aria-label="Fechar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#0a0a23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-cerrar">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>        
+        <h2>Fale Conosco</h2>
+        <form id="form-contacto" action="enviar.php" method="POST" novalidate>
+            <div class="form-grupo">
+                <input type="text" placeholder="Nome" id="nombre" required>
+                <div class="error-message" id="error-nombre"></div>
+                <input type="text" placeholder="Sobrenome" id="apellido" required>
+                <div class="error-message" id="error-apellido"></div>
+            </div>
+            <div class="form-grupo">
+                <input type="email" placeholder="E-mail" id="email" required>
+                <div class="error-message" id="error-email"></div>
+                <input type="text" placeholder="Empresa" id="compania" required>
+                <div class="error-message" id="error-compania"></div>
+            </div>
+            <div class="form-grupo">
+                <textarea id="mensaje" rows="4" placeholder="Mensagem" required></textarea>
+                <div class="error-message" id="error-mensaje"></div>
+                <div id="contador-mensaje">0/500</div>
+            </div>
+            <input type="hidden" name="lang" value="pt">
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </main>    
+  <!--Rodapé-->
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Coluna 1 - Logo -->
+    <div class="footer-col logo-col">
+      <img src="../img/footer.svg" alt="FCR Consultores" class="footer-logo">
+    </div>
+
+    <!-- Coluna 2 - Descobrir -->
+    <div class="footer-col">
+      <h4>Descobrir</h4>
+      <ul>
+        <li><a href="#quienes-somos">Quem Somos</a></li>
+        <li><a href="#servicios">Nossos Serviços</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+      </ul>
+    </div>
+
+    <!-- Coluna 3 - Serviços -->
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#sap-basis">SAP Basis</a></li>
+        <li><a href="#solution-manager">Solution Manager</a></li>
+        <li><a href="#seguridad">Segurança</a></li>
+        <li><a href="#alianza-estrategica">Aliança Estratégica</a></li>
+        <li><a href="#grc">GRC</a></li>
+        <li><a href="#auditoria">Auditoria</a></li>
+      </ul>
+    </div>
+
+    <!-- Coluna 4 - Contato -->
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li>Av. Hernando de Aguirre 128,<br>7510026 Providencia,<br>Região Metropolitana, Chile</li>
+        <li>Email: <a href="mailto:contacto@fcrconsultores.cl">contacto@fcrconsultores.cl</a></li>
+        <li>Tel: <a href="tel:+56232529500">+56 2 3252 9500</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 FCR Consultores. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+  <!-- Bibliotecas externas -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- JS personalizado -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

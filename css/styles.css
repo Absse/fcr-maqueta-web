@@ -1,25 +1,33 @@
-/* ===== PALETA CORPORATIVA ===== */
+/* ===============================
+   PALETA CORPORATIVA Y RESET
+   =============================== */
 :root {
   --color-primario: #395781;
   --color-secundario: #758AA7;
   --color-fondo: #FFFFFF;
   --color-texto: #373737;
   --color-hover: #2d4466;
+  /* Puedes agregar --sombra-suave si te animas: */
+  /* --sombra-suave: 0 8px 32px 0 rgba(0,0,0,0.14); */
 }
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
-
-html, body {
-  width: 100%;
+body {
+  font-family: 'Poppins', sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.6;
   font-weight: 300;
+}
+
+html {
+  scroll-behavior: smooth; /* si quieres smooth scrolling */
 }
 
 main {
@@ -237,7 +245,7 @@ h1, h2, h3, .titulo {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-image: url('/img/img_hero.png'); /* Cambiar aquí la ruta real */
+  background-image: url('/img/img_hero.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -360,10 +368,10 @@ h1, h2, h3, .titulo {
   flex: 0 0 45%;
   height: 500px; /* o la altura que quieras */
   width: 40%;
-  background-image: url('/img/quienes_somos2.png');
+  background-image: url('/img/quienes_somos.png');
   background-size: contain;
   background-size: cover;
-  background-position: right center;
+  background-position:center;
   background-repeat: no-repeat;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px; 
@@ -372,10 +380,8 @@ h1, h2, h3, .titulo {
 .quienes-somos__contenido {
   flex: 1;
   background-color: var(--color-primario);
-  padding: 20px 70px;
+  padding: 20px 40px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   height: auto;
   min-height: 400px; /* Para igualar altura visual */
 }
@@ -599,19 +605,17 @@ h1, h2, h3, .titulo {
 /* Contenedor de Info Cliente */
 .cliente-info {
   height: 450px;
-  overflow-y: auto;
-  display: flex; /* FLEX: permite poner borde + contenido uno al lado del otro */
+  display: flex;
   align-items: stretch;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-  overflow: hidden;
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.28);
   max-width: 700px;
   margin: 10px auto 0;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .cliente-info.show {
@@ -620,14 +624,10 @@ h1, h2, h3, .titulo {
 }
 
 .cliente-borde {
-  width: 6px; /* fija, no se anima */
+   width: 6px;
   background-color: var(--color-primario);
-  transition: background-color 0.5s ease, box-shadow 0.5s ease;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Sin sombra inicialmente */
-}
-
-.cliente-borde.glow {
-  box-shadow: 0 0 12px 2px rgba(0, 97, 168, 1.5); /* Color dinámico en sombra */
+  transition: background-color 0.5s, box-shadow 0.5s;
+  box-shadow: none;
 }
 
 .cliente-contenido {
@@ -877,7 +877,7 @@ textarea {
 }
 
 .footer-logo {
-  width: 200px; /* 🔥 Ahora el logo puede ser más grande */
+  width: 210px;
   max-width: 100%;
   opacity: 0.9;
   transition: opacity 0.3s;
@@ -940,6 +940,42 @@ textarea {
   color: var(--color-hover);
 }
 
+.footer-bottom {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Highlight temporal para logos de clientes */
+.logo-highlight {
+  box-shadow: 0 0 4px 1px var(--logo-glow, #ffe167), 0 0 0 1px var(--logo-glow, #ffe167);
+  outline: none;
+  border-radius: 18px;
+  transition: box-shadow 0.4s;
+  z-index: 10;
+}
+
+.logo-highlight img {
+  filter: brightness(1.08) drop-shadow(0 0 2px var(--logo-glow, #ffe16777));
+  transition: filter 0.4s;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.95em;
+  margin-bottom: 5px;
+  min-height: 18px;
+  transition: color 0.3s;
+}
+#contador-mensaje {
+  text-align: right;
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 8px;
+}
+
 /* Versión Desktop */
 @media (min-width: 992px) {
   .nav {
@@ -999,6 +1035,7 @@ textarea {
     transition: right 0.3s ease;
     overflow-y: auto;
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px); /* Para Safari 9+ */
     gap: 10px;
   }
 
@@ -1127,7 +1164,7 @@ textarea {
   .main-header.scrolled .nav.open {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px); /* Para Safari 9+ */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding-top: 6px;
   }
@@ -1222,7 +1259,6 @@ textarea {
     order: 1; /* Todas las columnas tienen mismo orden */
     text-align: center;
     padding: 15px;
-    position: relative;
   }
 
   .footer-col:not(:first-child)::before {
@@ -1297,9 +1333,8 @@ textarea {
   .quienes-somos__imagen {
     width: 100%;
     height: 430px; /* tu ajuste */
-    background-image: url('/img/quienes_somos2.png');
+    background-image: url('/img/quienes_somos.png');
     background-size: cover;
-    background-position: top center;
     background-repeat: no-repeat;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -1394,10 +1429,7 @@ textarea {
 
   /* 🔥 COLUMNAS */
   .footer-col {
-    flex: 1 1 45%; /* 🔥 Dos columnas por fila */
-    text-align: center;
-    padding: 10px;
-    position: relative;
+    padding: 10px 5px;
   }
 
   /* 🔥 Mantenemos líneas separadoras */
@@ -1432,10 +1464,7 @@ textarea {
   }
 
   .footer-logo {
-    width: 240px; /* 🔥 Más grande */
-    max-width: 100%;
-    opacity: 0.9;
-    transition: opacity 0.3s;
+    width: 240px;
   }
 
 }
@@ -1542,10 +1571,7 @@ textarea {
   /*=============FOOTER=======*/
 
   .footer-logo {
-    width: 340px; /* 🔥 Más grande */
-    max-width: 100%;
-    opacity: 0.9;
-    transition: opacity 0.3s;
+    width: 340px;
   }
 
 }
@@ -1587,7 +1613,7 @@ textarea {
 
   .footer-col {
     flex: 1 1 100%;
-    text-align: center;
+    min-height: unset;
     padding: 5px 0;
   }
 
@@ -1610,8 +1636,7 @@ textarea {
   }
 
   .footer-logo {
-    width: 180px;
-    margin-top: 10px; /* 🔥 Solo un pequeño margen si quieres */
+    width: 360px;
   }
 
   .footer-bottom {

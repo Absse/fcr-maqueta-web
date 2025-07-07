@@ -2,24 +2,20 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="description" content="Consultora líder en transformación digital SAP. Soluciones a medida para grandes empresas en Chile y Latinoamérica.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="icon" href="img/fcr_logo_icono.ico" type="image/x-icon">
   <title>FCR CONSULTORES SPA</title>
-
   <!-- Tipografía moderna -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css" />
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-
 </head>
 <body>
-
   <!-- Header con navegación -->
   <header class="main-header">
     <div class="nav-container">
@@ -32,15 +28,15 @@
       </a>
       <!-- Submenú de idiomas mobile -->
       <ul class="language-options-mobile">
-        <li><a href="#">
+        <li><a href="/index.html">
           <span class="flag-icon"><img src="assets/flags/4x3/cl.svg" alt="CL"></span>
           <span class="lang-text">Español</span>
         </a></li>
-        <li><a href="#">
+        <li><a href="/en/index.html">
           <span class="flag-icon"><img src="assets/flags/4x3/us.svg" alt="US"></span>
           <span class="lang-text">English</span>
         </a></li>
-        <li><a href="#">
+        <li><a href="/pt/index.html">
           <span class="flag-icon"><img src="assets/flags/4x3/br.svg" alt="BR"></span>
           <span class="lang-text">Português</span>
         </a></li>
@@ -58,37 +54,52 @@
         <li class="nav-item">
           <a href="#">Nosotros</a>
           <ul class="submenu">
-            <li><a href="#">Quiénes somos</a></li>
-            <li><a href="#">Nuestro equipo</a></li>
+            <li><a href="#quienes-somos">Quiénes somos</a></li>
+            <!--<li><a href="#">Nuestro equipo</a></li>-->
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#">Servicios</a>
+          <a href="#servicios">Servicios</a>
           <ul class="submenu">
-            <li><a href="#">Consultoría SAP</a></li>
-            <li><a href="#">Transformación Digital</a></li>
+            <li><a href="#sap-basis">SAP Basis</a></li>
+            <li><a href="#solution-manager">Solution Manager</a></li>
+            <li><a href="#seguridad">Seguridad</a></li>
+            <li><a href="#alianza-estrategica">Alizanza Estratégica</a></li>
+            <li><a href="#grc">GRC</a></li>
+            <li><a href="#auditoria">Auditoria</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#">Clientes</a>
+          <a href="#clientes">Clientes</a>
+          <ul class="submenu">
+            <li><a href="#logo-colbun" data-cliente="Colbún">Colbún</a></li>
+            <li><a href="#logo-sigdo-koopers" data-cliente="Sigdo Koopers">Sigdo Koopers</a></li>
+            <li><a href="#logo-grupo-saesa" data-cliente="Grupo Saesa">Grupo Saesa</a></li>
+            <li><a href="#logo-enel-brasil" data-cliente="Enel Brasil">Enel Brasil</a></li>
+            <li><a href="#logo-latam-airlines" data-cliente="Latam Airlines">Latam Airlines</a></li>
+            <li><a href="#logo-carozzi" data-cliente="Carozzi">Carozzi</a></li>
+            <li><a href="#logo-parque-arauco" data-cliente="Parque Arauco">Parque Arauco</a></li>
+            <li><a href="#logo-mutual-de-seguridad" data-cliente="Mutual de Seguridad">Mutual de Seguridad</a></li>
+            <li><a href="#logo-codelco" data-cliente="Codelco">Codelco</a></li>
+          </ul>
         </li>
         <li class="nav-item">
-          <a href="#">Contacto</a>
+          <a href="#" id="menu-contacto">Contacto</a>
         </li>
         <li class="nav-item language">
           <a href="#" class="language-toggle">
             <img src="img/mundo-idiomas-blanco.svg" alt="Idioma" class="icon-world" id="world-icon"/>
           </a>
           <ul class="language-options">
-            <li><a href="#">
+            <li><a href="/index.html">
               <span class="flag-icon"><img src="assets/flags/4x3/cl.svg" alt="CL"></span>
               <span class="lang-text">Español</span>
             </a></li>
-            <li><a href="#">
+            <li><a href="/en/index.html">
               <span class="flag-icon"><img src="assets/flags/4x3/us.svg" alt="US"></span>
               <span class="lang-text">English</span>
             </a></li>
-            <li><a href="#">
+            <li><a href="/pt/index.html">
               <span class="flag-icon"><img src="assets/flags/4x3/br.svg" alt="BR"></span>
               <span class="lang-text">Português</span>
             </a></li>
@@ -116,9 +127,8 @@
       </div>
     </section>
     <!-- QUIÉNES SOMOS -->
-    <section class="quienes-somos">
+    <section class="quienes-somos" id="quienes-somos">
       <div class="quienes-somos__imagen"></div>
-      
       <div class="quienes-somos__contenido">
         <div class="quienes-somos__texto">
           <h2>Quiénes Somos</h2>
@@ -137,38 +147,38 @@
         </div>
     
         <div class="grid-servicios">
-          <div class="card-servicio" data-animacion>
-            <img src="img/servicios/sap-basis.png" alt="SAP Basis">
+          <div class="card-servicio" id="sap-basis" data-animacion>
+            <img src="img/logos-servicios/sap-basis.png" alt="SAP Basis">
             <h3>SAP Basis</h3>
             <p>Instalamos, migramos y mantenemos su entorno SAP actualizado con las últimas tecnologías, ofreciendo monitoreo continuo, gestión de parches y soporte especializado 24/7, garantizando un rendimiento óptimo y seguro.</p>
           </div>
     
-          <div class="card-servicio" data-animacion>
-            <img src="img/servicios/solution.png" alt="Solution Manager">
+          <div class="card-servicio" id="solution-manager" data-animacion>
+            <img src="img/logos-servicios/solution.png" alt="Solution Manager">
             <h3>Solution Manager</h3>
             <p>Implementamos y configuramos SAP Solution Manager para una gestión centralizada de su entorno SAP, incluyendo monitoreo en tiempo real, gestión de proyectos, documentación de procesos y soporte técnico especializado.</p>
           </div>
     
-          <div class="card-servicio" data-animacion>
-            <img src="img/servicios/seguridad.png" alt="Seguridad">
+          <div class="card-servicio" id="seguridad" data-animacion>
+            <img src="img/logos-servicios/seguridad.png" alt="Seguridad">
             <h3>Seguridad</h3>
             <p>Fortalecemos la seguridad de tu entorno SAP con diseño de roles, implementación de SAP GRC y auditorías optimizadas, asegurando el cumplimiento normativo y la gestión efectiva de riesgos.</p>
           </div>
     
-          <div class="card-servicio" data-animacion>
-            <img src="img/servicios/estrategia.png" alt="Alianza Estratégica">
+          <div class="card-servicio" id="alianza-estrategica" data-animacion>
+            <img src="img/logos-servicios/estrategia.png" alt="Alianza Estratégica">
             <h3>Alianza Estratégica</h3>
             <p>Como socios de IBM, en FCR Consultores colaboramos desde hace más de cinco años en la ejecución de proyectos estratégicos de transformación digital. Ofrecemos soluciones SAP a medida, integrando las mejores prácticas y tecnologías de IBM para maximizar la eficiencia, innovación y resultados de nuestros clientes.</p>
           </div>
 
-          <div class="card-servicio" data-animacion>
-            <img src="img/servicios/grc.png" alt="Gestión de Riesgos y Cumplimiento">
+          <div class="card-servicio" id="grc" data-animacion>
+            <img src="img/logos-servicios/grc.png" alt="Gestión de Riesgos y Cumplimiento">
             <h3>GRC</h3>
             <p>Analizamos procesos empresariales, diseñamos controles personalizados, mapeamos regulaciones (GDPR, SOX, HIPAA) y generamos informes de cumplimiento, asegurando el control y mitigación efectiva de riesgos.</p>
           </div>
 
-          <div class="card-servicio" data-animacion>
-            <img src="img/servicios/auditoria.png" alt="Auditoria">
+          <div class="card-servicio" id="auditoria" data-animacion>
+            <img src="img/logos-servicios/auditoria.png" alt="Auditoria">
             <h3>Auditoría</h3>
             <p>Diseñamos estrategias de auditoría adaptadas a su empresa, automatizamos procesos de recopilación y análisis de datos, y garantizamos el cumplimiento de las mejores prácticas y normativas regulatorias.</p>
           </div>
@@ -194,23 +204,32 @@
         <div class="swiper clientes-swiper">
           <div class="swiper-wrapper">
             <!-- Slides de Logos -->
-            <div class="swiper-slide">
-              <img src="img/clientes/colbun.png" alt="Colbún">
+            <div class="swiper-slide" id="logo-colbun">
+              <img src="img/clientes/colbun.png" alt="Colbún" loading="lazy">
             </div>
-            <div class="swiper-slide">
-              <img src="img/clientes/sigdo-koopers.png" alt="Sigdo koopers">
+            <div class="swiper-slide" id="logo-sigdo-koopers">
+              <img src="img/clientes/sigdo-koopers.png" alt="Sigdo koopers" loading="lazy">
             </div>
-            <div class="swiper-slide">
-              <img src="img/clientes/grupo-saesa.png" alt="Grupo Saesa">
+            <div class="swiper-slide" id="logo-grupo-saesa">
+              <img src="img/clientes/grupo-saesa.png" alt="Grupo Saesa" loading="lazy">
             </div>
-            <div class="swiper-slide">
-              <img src="img/clientes/latam.png" alt="Latam">
+            <div class="swiper-slide" id="logo-enel-brasil">
+              <img src="img/clientes/enel-brasil.png" alt="Enel Brasil" loading="lazy">
             </div>
-            <div class="swiper-slide">
-              <img src="img/clientes/carozzi.png" alt="Carozzi">
+            <div class="swiper-slide" id="logo-latam-airlines">
+              <img src="img/clientes/latam.png" alt="Latam" loading="lazy">
             </div>
-            <div class="swiper-slide">
-              <img src="img/clientes/codelco.png" alt="Codelco">
+            <div class="swiper-slide" id="logo-carozzi">
+              <img src="img/clientes/carozzi.png" alt="Carozzi" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-parque-arauco">
+              <img src="img/clientes/parque-arauco.png" alt="Parque Arauco" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-mutual-de-seguridad">
+              <img src="img/clientes/mutual.png" alt="Mutual de Seguridad" loading="lazy">
+            </div>
+            <div class="swiper-slide" id="logo-codelco">
+              <img src="img/clientes/codelco.png" alt="Codelco" loading="lazy">
             </div>
             <!-- Agrega más logos -->
           </div>
@@ -245,25 +264,25 @@
           </svg>
         </button>        
         <h2>Contáctanos</h2>
-        <form id="form-contacto">
+        <form id="form-contacto" action="enviar.php" method="POST" novalidate>
           <div class="form-grupo">
-            <input type="text" placeholder="Nombre" required>
-            <input type="text" placeholder="Apellido" required>
+            <input type="text" placeholder="Nombre" id="nombre" required>
+            <div class="error-message" id="error-nombre"></div>
+            <input type="text" placeholder="Apellido" id="apellido" required>
+            <div class="error-message" id="error-apellido"></div>
           </div>
           <div class="form-grupo">
-            <input type="email" placeholder="Email" required>
-            <input type="text" placeholder="Compañía" required>
+            <input type="email" placeholder="Email" id="email" required>
+            <div class="error-message" id="error-email"></div>
+            <input type="text" placeholder="Compañía" id="compania" required>
+            <div class="error-message" id="error-compania"></div>
           </div>
           <div class="form-grupo">
-            <select required>
-              <option value=\"\">Selecciona tu país...</option>
-              <option value=\"CL\">Chile</option>
-              <option value=\"MX\">México</option>
-            </select>
+            <textarea id="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+            <div class="error-message" id="error-mensaje"></div>
+            <div id="contador-mensaje">0/500</div>
           </div>
-          <div class="form-grupo">
-            <textarea rows="4" placeholder="Mensaje" required></textarea>
-          </div>
+          <input type="hidden" name="lang" value="es">
           <button type="submit" class="btn-enviar">Enviar</button>
         </form>
       </div>
@@ -272,72 +291,58 @@
   <!--Footer-->
   <footer class="footer">
     <div class="footer-container">
-  
+
       <!-- Columna 1 - Logo -->
       <div class="footer-col logo-col">
         <img src="img/footer.svg" alt="FCR Consultores" class="footer-logo">
       </div>
-  
+
       <!-- Columna 2 - Descubrir -->
       <div class="footer-col">
         <h4>Descubrir</h4>
         <ul>
-          <li><a href="#">Quiénes Somos</a></li>
-          <li><a href="#">Nuestro Equipo</a></li>
-          <li><a href="#">Nuestros Servicios</a></li>
-          <li><a href="#">Clientes</a></li>
+          <li><a href="#quienes-somos">Quiénes Somos</a></li>
+          <li><a href="#servicios">Nuestros Servicios</a></li>
+          <li><a href="#clientes">Clientes</a></li>
         </ul>
       </div>
-  
+
       <!-- Columna 3 - Servicios -->
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
-          <li><a href="#">Consultoría SAP</a></li>
-          <li><a href="#">Transformación Digital</a></li>
-          <li><a href="#">SAP Basis</a></li>
-          <li><a href="#">Auditoría SAP</a></li>
-          <li><a href="#">GRC y Seguridad</a></li>
+          <li><a href="#sap-basis">SAP Basis</a></li>
+              <li><a href="#solution-manager">Solution Manager</a></li>
+              <li><a href="#seguridad">Seguridad</a></li>
+              <li><a href="#alianza-estrategica">Alizanza Estratégica</a></li>
+              <li><a href="#grc">GRC</a></li>
+              <li><a href="#auditoria">Auditoria</a></li>
         </ul>
       </div>
-  
-      <!-- Columna 4 - Contacto -->
+
+      <!-- Columna 4 - Contacto ACTUALIZADO -->
       <div class="footer-col">
         <h4>Contacto</h4>
         <ul>
-          <li><a href="#">Contáctanos</a></li>
-          <li><a href="#">Email: contacto@fcrconsultores.com</a></li>
-          <li><a href="#">Tel: +56 2 1234 5678</a></li>
-          <li><a href="#">Santiago, Chile</a></li>
+          <li>Av. Hernando de Aguirre 128,<br>7510026 Providencia,<br>Región Metropolitana, Chile</li>
+          <li>Email: <a href="mailto:contacto@fcrconsultores.cl">contacto@fcrconsultores.cl</a></li>
+          <li>Tel: <a href="tel:+56232529500">+56 2 3252 9500</a></li>
         </ul>
       </div>
-  
-      <!-- Columna 5 - Síguenos -->
-      <div class="footer-col">
-        <h4>Síguenos</h4>
-        <ul>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">YouTube</a></li>
-        </ul>
-      </div>
-  
+
     </div>
-  
+    <!-- Pie de página centrado, SIN links extras -->
     <div class="footer-bottom">
-      <p>© 2025 FCR Consultores. Todos los derechos reservados.</p>
-      <div class="footer-bottom-links">
-        <a href="#">Política de Privacidad</a>
-        <a href="#">Términos de Uso</a>
-      </div>
+    <p>© 2025 FCR Consultores. Todos los derechos reservados.</p>
     </div>
   </footer>
   
-<!-- Librerías externas -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Librerías externas -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- JS personalizado -->
-<script src="js/main.js"></script>
+  <!-- JS personalizado -->
+  <script src="js/main.js"></script>
 
 </body>
 </html>
