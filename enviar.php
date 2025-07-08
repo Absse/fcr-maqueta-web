@@ -1,43 +1,62 @@
 <?php
-// 1. Recibe datos del formulario (los IDs de tus input deben coincidir)
+require 'includes/PHPMailer/src/PHPMailer.php';
+require 'includes/PHPMailer/src/SMTP.php';
+require 'includes/PHPMailer/src/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Captura los campos del formulario
 $nombre    = isset($_POST['nombre']) ? trim($_POST['nombre']) : '';
 $apellido  = isset($_POST['apellido']) ? trim($_POST['apellido']) : '';
 $email     = isset($_POST['email']) ? trim($_POST['email']) : '';
 $compania  = isset($_POST['compania']) ? trim($_POST['compania']) : '';
 $mensaje   = isset($_POST['mensaje']) ? trim($_POST['mensaje']) : '';
-$lang      = isset($_POST['lang']) ? $_POST['lang'] : 'es'; // valor por defecto
+$lang      = isset($_POST['lang']) ? $_POST['lang'] : 'es';
 
-// 2. Destinatarios (puedes poner varios separados por coma)
-$to = 'cba.gs@hotmail.com'; // cambia por tu correo real
-$subject = "Nuevo mensaje de contacto - FCR Consultores";
+$mail = new PHPMailer(true);
 
-// 3. Arma el cuerpo del mensaje
-$body = "Nombre: $nombre $apellido\n";
-$body .= "Email: $email\n";
-$body .= "Compañía: $compania\n";
-$body .= "Mensaje:\n$mensaje\n";
+try {
+    // Configuración del servidor SMTP de BlueHosting
+    $mail->isSMTP();
+    $mail->Host       = 'mail.fcrconsultores.cl';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'no-reply@fcrconsultores.cl';
+    $mail->Password   = 'Pwcwelcome1!'; // ← reemplaza por tu contraseña real
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Usa ssl para 465
+    $mail->Port       = 465; // Puerto recomendado por BlueHosting
 
-// Cabeceras
-$headers = "From: $email\r\n" .
-           "Reply-To: $email\r\n";
+    // Remitente y destinatario
+    $mail->setFrom('no-reply@fcrconsultores.cl', 'FCR Consultores');
+    $mail->addAddress('no-reply@fcrconsultores.cl'); // ← pon aquí el correo del cliente real
+    $mail->addReplyTo($email, $nombre . ' ' . $apellido);
 
-// 4. Intenta enviar el correo
-if (mail($to, $subject, $body, $headers)) {
-    // Éxito: Redirige al "gracias" correcto
+    // Contenido
+    $mail->CharSet = 'UTF-8';
+    $mail->isHTML(false);
+    $mail->Subject = "Nuevo mensaje de contacto - FCR Consultores";
+    $mail->Body    = "Nombre: $nombre $apellido\n"
+                   . "Email: $email\n"
+                   . "Compañía: $compania\n"
+                   . "Mensaje:\n$mensaje\n";
+
+    $mail->send();
+
+    // Redirección multilenguaje
     if ($lang === 'en') {
-        header("Location: /en/thankyou.html");
+        header("Location: /en/gracias.html");
     } else if ($lang === 'pt') {
-        header("Location: /pt/obrigado.html");
+        header("Location: /pt/gracias.html");
     } else {
         header("Location: /gracias.html");
     }
     exit;
-} else {
-    // Error: Redirige al error correcto
+} catch (Exception $e) {
+    // Redirección a error
     if ($lang === 'en') {
         header("Location: /en/error.html");
     } else if ($lang === 'pt') {
-        header("Location: /pt/erro.html");
+        header("Location: /pt/error.html");
     } else {
         header("Location: /error.html");
     }
